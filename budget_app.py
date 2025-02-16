@@ -37,40 +37,6 @@ class Category:
         return amount <= self.balance
 
 
-# def create_spend_chart(categories):
-#     chart = 'Percentage spent by category\n'
-#     spent = []
-#     total_spent = 0
-#     for category in categories:
-#         total = 0
-#         for item in category.ledger:
-#             if item['amount'] < 0:
-#                 total -= item['amount']
-#         spent.append(total)
-#         total_spent += total
-    
-#     for category in categories:
-#         percentage = spent[categories.index(category)] / total_spent
-#         chart += f'| '
-#         for i in range(100, -10, -10):
-#             if percentage * 100 >= i:
-#                 chart += 'o  '
-#             else:
-#                 chart += '   '
-    
-#     chart += ' '*4 + '-'*(len(categories)*3 + 1) + '\n'
-    
-#     for i in range(0, 15):
-#         chart += ' '*5
-#         for category in categories:
-#             if len(category.category) > i:
-#                 chart += category.category[i] + '  '
-#             else:
-#                 chart += '   '
-#         if i != 14:
-#             chart += '\n'
-    
-#     return chart
 def create_spend_chart(categories):
     chart = 'Percentage spent by category\n'
     spent = []
@@ -108,6 +74,7 @@ def create_spend_chart(categories):
             chart += '\n'
     
     return chart
+
 
 food = Category('Food')
 food.deposit(1000, 'deposit')
